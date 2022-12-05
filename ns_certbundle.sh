@@ -20,7 +20,7 @@ then
        echo "Certificate bundle exists.Terminating processing ..." 
     else
        echo "Downlading Mozilla CA bundle"
-       curl -o $certbundle https://curl.haxx.se/ca/cacert.pem
+       curl -L -o $certbundle https://curl.se/ca/cacert.pem
        echo -en "\nNetskope Tenant Certificate" >> "$certbundle"
        echo -en "\n###########################\n" >>"$certbundle"
        cat "$tenantcert" >> "$certbundle"
